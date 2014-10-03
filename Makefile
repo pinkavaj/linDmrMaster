@@ -42,7 +42,8 @@ LibPath                := "$(LibraryPathSwitch)."
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/dmr$(ObjectSuffix) $(IntermediateDirectory)/rdac$(ObjectSuffix) $(IntermediateDirectory)/smaster$(ObjectSuffix) $(IntermediateDirectory)/sqlite$(ObjectSuffix)  $(IntermediateDirectory)/convbin$(ObjectSuffix) $(IntermediateDirectory)/BPTC1969$(ObjectSuffix) $(IntermediateDirectory)/decode34Rate$(ObjectSuffix) $(IntermediateDirectory)/hyteraDecode$(ObjectSuffix) $(IntermediateDirectory)/aprs$(ObjectSuffix)  $(IntermediateDirectory)/scheduler$(ObjectSuffix)
+Sources=main.c dmr.c rdac.c smaster.c sqlite.c webserv.c htmlreplace.c htmlpost.c convbin.c BPTC1969.c decode34Rate.c hyteraDecode.c aprs.c scheduler.c
+Objects=$(Sources:%.c=$(IntermediateDirectory)/%$(ObjectSuffix))
 
 ##
 ## Main Build Targets 
