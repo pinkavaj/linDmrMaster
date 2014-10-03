@@ -42,8 +42,9 @@ LibPath                := "$(LibraryPathSwitch)."
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/dmr$(ObjectSuffix) $(IntermediateDirectory)/rdac$(ObjectSuffix) $(IntermediateDirectory)/smaster$(ObjectSuffix) $(IntermediateDirectory)/sqlite$(ObjectSuffix)  $(IntermediateDirectory)/convbin$(ObjectSuffix) $(IntermediateDirectory)/BPTC1969$(ObjectSuffix) $(IntermediateDirectory)/decode34Rate$(ObjectSuffix) $(IntermediateDirectory)/hyteraDecode$(ObjectSuffix) $(IntermediateDirectory)/aprs$(ObjectSuffix)  $(IntermediateDirectory)/scheduler$(ObjectSuffix)
+Sources=aprs.c convbin.c dmr.c main.c scheduler.c sqlite.c BPTC1969.c decode34Rate.c hyteraDecode.c rdac.c smaster.c
 
+Objects=$(Sources:%.c=$(IntermediateDirectory)/%$(ObjectSuffix))
 Depends=$(Objects:%$(ObjectSuffix)=%$(DependSuffix))
 Preprocesses=$(Objects:%$(ObjectSuffix)=%$(PreprocessSuffix))
 
