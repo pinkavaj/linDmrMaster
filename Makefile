@@ -176,53 +176,10 @@ $(IntermediateDirectory)/scheduler$(PreprocessSuffix): scheduler.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
-##
-## Clean
-##
+
 clean:
-	$(RM) $(IntermediateDirectory)/main$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/main$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/main$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/dmr$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/dmr$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/dmr$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/rdac$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/rdac$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/rdac$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/smaster$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/smaster$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/smaster$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/sqlite$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/sqlite$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/sqlite$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/webserv$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/webserv$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/webserv$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/htmlreplace$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/htmlreplace$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/htmlreplace$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/htmlpost$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/htmlpost$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/htmlpost$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/convbin$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/convbin$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/convbin$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/BPTC1969$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/BPTC1969$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/BPTC1969$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/decode34Rate$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/decode34Rate$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/decode34Rate$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/hyteraDecode$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/hyteraDecode$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/hyteraDecode$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/aprs$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/aprs$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/aprs$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/scheduler$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/scheduler$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/scheduler$(PreprocessSuffix)
-
+	$(RM) $(Objects)
+	$(RM) $(Objects:%$(ObjectSuffix)=%$(DependSuffix))
+	$(RM) $(Objects:%$(ObjectSuffix)=%$(PreprocessSuffix))
 	$(RM) $(OutputFile)
-
 
