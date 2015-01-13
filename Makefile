@@ -56,9 +56,6 @@ $(OutputFile): makeDirStep $(Objects)
 makeDirStep:
 	@test -d ./Release || $(MakeDirCommand) ./Release
 
-PreBuild:
-
-
 ##
 ## Objects
 ##
