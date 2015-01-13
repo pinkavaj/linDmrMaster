@@ -51,9 +51,9 @@ Preprocesses=$(Objects:%$(ObjectSuffix)=%$(PreprocessSuffix))
 ##
 ## Main Build Targets 
 ##
-all: $(OutputFile)
+all: makeDirStep $(OutputFile)
 
-$(OutputFile): makeDirStep $(Objects)
+$(OutputFile): $(Objects)
 	@$(MakeDirCommand) $(@D)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) $(Objects) $(LibPath) $(Libs) $(LinkOptions)
 
