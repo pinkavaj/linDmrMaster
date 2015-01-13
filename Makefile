@@ -114,3 +114,5 @@ clean:
 	$(RM) $(Preprocesses)
 	$(RM) $(OutputFile)
 
+.PHONY: all clean makeDirStep
+
