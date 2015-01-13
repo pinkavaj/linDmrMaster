@@ -45,6 +45,7 @@ CodeLiteDir:=/usr/share/codelite
 Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/dmr$(ObjectSuffix) $(IntermediateDirectory)/rdac$(ObjectSuffix) $(IntermediateDirectory)/smaster$(ObjectSuffix) $(IntermediateDirectory)/sqlite$(ObjectSuffix)  $(IntermediateDirectory)/convbin$(ObjectSuffix) $(IntermediateDirectory)/BPTC1969$(ObjectSuffix) $(IntermediateDirectory)/decode34Rate$(ObjectSuffix) $(IntermediateDirectory)/hyteraDecode$(ObjectSuffix) $(IntermediateDirectory)/aprs$(ObjectSuffix)  $(IntermediateDirectory)/scheduler$(ObjectSuffix)
 
 Depends=$(Objects:%$(ObjectSuffix)=%$(DependSuffix))
+Preprocesses=$(Objects:%$(ObjectSuffix)=%$(PreprocessSuffix))
 
 ##
 ## Main Build Targets 
@@ -156,19 +157,8 @@ $(IntermediateDirectory)/scheduler$(PreprocessSuffix): scheduler.c
 ## Clean
 ##
 clean:
-	$(RM) $(IntermediateDirectory)/main$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/dmr$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/rdac$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/smaster$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/sqlite$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/convbin$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/BPTC1969$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/decode34Rate$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/hyteraDecode$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/aprs$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/scheduler$(PreprocessSuffix)
-
 	$(RM) $(Depends)
 	$(RM) $(Objects)
+	$(RM) $(Preprocesses)
 	$(RM) $(OutputFile)
 
