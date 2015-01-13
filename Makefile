@@ -44,6 +44,8 @@ LibPath                := "$(LibraryPathSwitch)."
 CodeLiteDir:=/usr/share/codelite
 Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/dmr$(ObjectSuffix) $(IntermediateDirectory)/rdac$(ObjectSuffix) $(IntermediateDirectory)/smaster$(ObjectSuffix) $(IntermediateDirectory)/sqlite$(ObjectSuffix)  $(IntermediateDirectory)/convbin$(ObjectSuffix) $(IntermediateDirectory)/BPTC1969$(ObjectSuffix) $(IntermediateDirectory)/decode34Rate$(ObjectSuffix) $(IntermediateDirectory)/hyteraDecode$(ObjectSuffix) $(IntermediateDirectory)/aprs$(ObjectSuffix)  $(IntermediateDirectory)/scheduler$(ObjectSuffix)
 
+Depends=$(Objects:%$(ObjectSuffix)=%$(DependSuffix))
+
 ##
 ## Main Build Targets 
 ##
@@ -154,29 +156,19 @@ $(IntermediateDirectory)/scheduler$(PreprocessSuffix): scheduler.c
 ## Clean
 ##
 clean:
-	$(RM) $(IntermediateDirectory)/main$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/main$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/dmr$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/dmr$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/rdac$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/rdac$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/smaster$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/smaster$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/sqlite$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/sqlite$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/convbin$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/convbin$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/BPTC1969$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/BPTC1969$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/decode34Rate$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/decode34Rate$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/hyteraDecode$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/hyteraDecode$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/aprs$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/aprs$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/scheduler$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/scheduler$(PreprocessSuffix)
 
+	$(RM) $(Depends)
 	$(RM) $(Objects)
 	$(RM) $(OutputFile)
 
